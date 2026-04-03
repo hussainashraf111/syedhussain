@@ -1560,56 +1560,97 @@
       backdrop-filter: blur(4px);
     }
         /* LAST CONTACT SECTION */
-   .container-five {
+    /* premium font import */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap');
+
+    /* ----- MAIN SECTION (FIV-SEC) ----- */
+    .fiv-sec {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 80px 40px 100px;
+      transition: all 0.3s ease;
+    }
+
+    /* heading styles */
+    .fiv-sec-h3 {
+      color: #c5621c;
+      font-weight: 600;
+      font-size: clamp(1rem, 4vw, 1.25rem);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: inline-block;
+      background: rgba(197, 98, 28, 0.1);
+      padding: 6px 18px;
+      border-radius: 40px;
+      backdrop-filter: blur(2px);
+    }
+
+    .fiv-sec h2 {
+      color: #111827;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      line-height: 1.2;
+      margin-bottom: 48px;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    }
+
+    /* ---------- GRID SYSTEM (fully responsive, premium) ---------- */
+    .container-five {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 28px;
-      padding: 80px 40px;
-      max-width: 1400px;
-      margin: 0 auto;   /* center on ultra-wide */
+      margin: 0 auto;
       transition: all 0.2s ease;
     }
 
-    /* card box */
+    /* card styling — premium & modern */
     .fiv-box {
       display: flex;
       flex-direction: column;
-      background: #ffffff;
-      padding: 36px 28px;
-      border-radius: 28px;
-      gap: 18px;
-      transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
-      box-sizing: border-box;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.02);
+      background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(0px);
-      border: 1px solid rgba(255, 255, 255, 0.5);
+      padding: 38px 28px;
+      border-radius: 36px;
+      gap: 20px;
+      transition: all 0.4s cubic-bezier(0.2, 0.95, 0.4, 1.05);
+      box-sizing: border-box;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      will-change: transform;
     }
 
-    /* subtle hover for interactivity */
+    /* elegant hover effect */
     .fiv-box:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(197, 98, 28, 0.15);
-      border-color: rgba(197, 98, 28, 0.2);
+      transform: translateY(-8px);
+      background: #ffffff;
+      box-shadow: 0 30px 45px -15px rgba(197, 98, 28, 0.2), 0 0 0 1px rgba(197, 98, 28, 0.2);
+      border-color: rgba(197, 98, 28, 0.3);
     }
 
-    /* header: icon + title inline */
+    /* header (icon + title) */
     .fiv-header {
       display: flex;
       align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;  /* for extreme narrow screens, wraps gracefully */
+      gap: 18px;
+      flex-wrap: wrap;
     }
 
-    /* icon styling */
+    /* icon design — premium touch */
     .fiv-header i {
-      font-size: clamp(24px, 3vw, 40px);
+      font-size: clamp(26px, 3vw, 42px);
       color: #c5621c;
-      padding: 14px;
-      border-radius: 50%;
-      background-color: #ffffff;
-      border: 1px solid #e0e4e9;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.02);
-      transition: transform 0.2s, box-shadow 0.2s;
+      padding: 16px;
+      border-radius: 28px;
+      background: linear-gradient(145deg, #ffffff, #fef9f4);
+      border: 1px solid #ffe1c6;
+      box-shadow: 0 10px 20px -5px rgba(197, 98, 28, 0.12), inset 0 1px 0 rgba(255,255,255,0.8);
+      transition: all 0.3s ease;
       width: auto;
       aspect-ratio: 1 / 1;
       display: inline-flex;
@@ -1618,67 +1659,98 @@
     }
 
     .fiv-box:hover .fiv-header i {
-      transform: scale(1.02);
-      box-shadow: 0 12px 22px rgba(197, 98, 28, 0.12);
-      border-color: #c5621c60;
+      transform: scale(1.03);
+      background: #ffffff;
+      border-color: #c5621c;
+      box-shadow: 0 16px 24px -8px rgba(197, 98, 28, 0.25);
+      color: #b0520c;
     }
 
-    /* title text */
+    /* title inside header */
     .fiv-title {
       font-weight: 700;
-      color: #1a2c3e;
-      font-size: clamp(1.25rem, 3vw, 1.8rem);
+      color: #0a1927;
+      font-size: clamp(1.35rem, 3vw, 1.8rem);
       margin: 0;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.3px;
       line-height: 1.3;
+      background: linear-gradient(120deg, #1e2a3a, #2c3e4e);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
-    /* address / description paragraph */
+    /* address / contact details */
     .fiv-con-p2 {
       font-weight: 500;
-      color: #3a4a5e;     /* improved contrast from original #00000028 (too transparent) */
+      color: #2c3f4f;
       text-align: left;
       margin: 0;
-      font-size: clamp(0.9rem, 2.5vw, 1rem);
-      line-height: 1.5;
-      border-top: 1px solid #f0f2f5;
-      padding-top: 12px;
-      letter-spacing: 0.01em;
+      font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+      line-height: 1.55;
+      border-top: 2px solid #f0e7de;
+      padding-top: 16px;
+      letter-spacing: -0.2px;
+      word-break: break-word;
     }
 
-    /* ----- FULL RESPONSIVE BREAKPOINTS ----- */
-    /* Laptops / small desktops */
-    @media (max-width: 1100px) {
+    /* ========== FULL RESPONSIVE ========== */
+    /* large desktop refinement */
+    @media (min-width: 1600px) {
+      .fiv-sec {
+        padding: 100px 60px;
+      }
       .container-five {
-        gap: 24px;
-        padding: 70px 35px;
+        gap: 36px;
       }
       .fiv-box {
-        padding: 30px 24px;
+        padding: 44px 36px;
       }
     }
 
-    /* Tablet landscape (2 columns) */
+    /* laptops / medium screens (keep 4 cols until 1100px) */
+    @media (max-width: 1100px) {
+      .fiv-sec {
+        padding: 70px 35px;
+      }
+      .container-five {
+        gap: 24px;
+      }
+      .fiv-box {
+        padding: 32px 24px;
+      }
+    }
+
+    /* Tablet landscape: switch to 2 columns */
     @media (max-width: 900px) {
       .container-five {
         grid-template-columns: repeat(2, 1fr);
         gap: 28px;
+      }
+      .fiv-sec {
         padding: 60px 30px;
+      }
+      .fiv-sec h2 {
+        margin-bottom: 40px;
+        text-align: center;
+      }
+      .fiv-sec-h3 {
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
 
-    /* Tablet portrait & smaller */
-    @media (max-width: 680px) {
+    /* Tablet portrait & small devices: still 2 cols but slightly reduced spacing */
+    @media (max-width: 700px) {
       .container-five {
         gap: 22px;
-        padding: 50px 24px;
       }
       .fiv-box {
         padding: 28px 22px;
-        gap: 14px;
       }
       .fiv-header {
-        gap: 12px;
+        gap: 14px;
       }
       .fiv-header i {
         padding: 12px;
@@ -1686,71 +1758,117 @@
       }
     }
 
-    /* Mobile (single column) */
-    @media (max-width: 550px) {
+    /* ===== MOBILE: SINGLE COLUMN + PERFECT CENTERING ===== */
+    @media (max-width: 580px) {
+      .fiv-sec {
+        padding: 50px 20px;
+      }
       .container-five {
         grid-template-columns: 1fr;
         gap: 24px;
-        padding: 40px 20px;
-        margin: 0 12px;
+        justify-items: center;   /* centers each card horizontally */
       }
+      
+      /* each card gets a max-width for premium look, not edge-to-edge */
       .fiv-box {
-        padding: 28px 20px;
-        border-radius: 24px;
+        max-width: 460px;
+        width: 100%;
+        padding: 32px 24px;
+        border-radius: 32px;
+        margin: 0 auto;          /* extra safety for centering */
       }
+      
+      /* center all content inside card on mobile — fixes "center mein nai arhe" */
+      .fiv-header {
+        justify-content: center;
+        text-align: center;
+        gap: 14px;
+        flex-direction: row;     /* keep icon + title inline but centered */
+      }
+      
       .fiv-con-p2 {
-        font-size: 0.95rem;
-        padding-top: 10px;
+        text-align: center;
+        padding-top: 16px;
+        border-top: 1px solid #f0e2d6;
       }
+      
       .fiv-title {
-        font-size: 1.4rem;
+        text-align: left;        /* keep title alignment natural, but within centered container it looks balanced */
+      }
+      
+      .fiv-sec h2 {
+        text-align: center;
+        margin-bottom: 32px;
+        padding: 0 8px;
+      }
+      
+      .fiv-sec-h3 {
+        display: table;
+        margin: 0 auto 16px auto;
       }
     }
 
-    /* extra small devices (<=380px) */
-    @media (max-width: 380px) {
-      .container-five {
-        padding: 32px 16px;
-        gap: 20px;
+    /* extra small devices (≤400px) */
+    @media (max-width: 400px) {
+      .fiv-sec {
+        padding: 40px 16px;
       }
       .fiv-box {
-        padding: 22px 16px;
+        padding: 26px 18px;
+        border-radius: 28px;
       }
       .fiv-header i {
         padding: 10px;
-        font-size: 22px;
+        font-size: 24px;
       }
       .fiv-title {
-        font-size: 1.25rem;
+        font-size: 1.35rem;
       }
       .fiv-con-p2 {
         font-size: 0.85rem;
+        line-height: 1.45;
+      }
+      .fiv-sec h2 {
+        font-size: 1.65rem;
       }
     }
 
-    /* optional: high resolution large screens */
-    @media (min-width: 1600px) {
-      .container-five {
-        max-width: 1500px;
-        gap: 32px;
-        padding: 100px 50px;
-      }
-      .fiv-box {
-        padding: 44px 36px;
-      }
-    }
-
-    /* accessibility & touch optimizations */
+    /* touch-friendly hover removal for mobile */
     @media (hover: none) and (pointer: coarse) {
       .fiv-box {
-        transition: none;
+        transition: transform 0.15s ease;
       }
       .fiv-box:active {
-        transform: scale(0.99);
-        background-color: #fefaf7;
+        transform: scale(0.98);
+        background: #fffaf5;
       }
     }
 
+    /* subtle animation on page load (premium feel) */
+    .fiv-box {
+      animation: fadeSlideUp 0.5s ease backwards;
+      animation-delay: calc(var(--order, 0) * 0.07s);
+    }
+    .container-five .fiv-box:nth-child(1) { --order: 1; }
+    .container-five .fiv-box:nth-child(2) { --order: 2; }
+    .container-five .fiv-box:nth-child(3) { --order: 3; }
+    .container-five .fiv-box:nth-child(4) { --order: 4; }
+
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* additional polish: gradient border on hover */
+    .fiv-box:hover {
+      background: linear-gradient(145deg, #ffffff, #fffbf7);
+    }
 
 
 /* Footer Styles */
