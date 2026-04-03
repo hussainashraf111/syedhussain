@@ -1564,7 +1564,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
-  margin: 0 100px;
+   padding: 100px 30px;
 }
 
 .fiv-box {
