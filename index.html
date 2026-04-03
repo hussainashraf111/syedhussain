@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My portfolio</title>
+    <link href="to.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <!-- logo / brand -->
+            <div class="logo">
+                <a href="#" aria-label="home">HussainAshraf</a>
+            </div>
+
+            <!-- navigation (desktop horizontal / mobile sidebar) -->
+            <nav class="navbar">
+                <ul class="nav-menu" id="navMenu">
+              <li><a href="#" data-scroll="sec1">Home</a></li>
+  <li><a href="#" data-scroll="second-section">About</a></li>
+  <li><a href="#" data-scroll="third-section">Services</a></li>
+  <li><a href="#" data-scroll="fourth-sec">Portfolio</a></li>
+  <li><a href="#" data-scroll="fiv-sec">Contact</a></li>
+
+                </ul>
+            </nav>
+
+            <!-- hamburger (mobile toggle) -->
+            <div class="hamburger" id="hamburger" aria-label="menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- overlay for mobile sidebar (hidden by default) -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+
+
+
+    <script>
+        (function () {
+            'use strict';
+
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('navMenu');
+            const overlay = document.getElementById('mobileOverlay');
+
+            if (!hamburger || !navMenu || !overlay) return;
+
+            // Function to open/close menu
+            function toggleMenu(force) {
+                const isActive = hamburger.classList.contains('active');
+
+                hamburger.classList.toggle('active', force);
+                navMenu.classList.toggle('active', force);
+                overlay.classList.toggle('active', force);
+                hamburger.setAttribute('aria-expanded', force ? 'true' : 'false');
+            }
+
+            // Hamburger click
+            hamburger.addEventListener('click', function (e) {
+                e.stopPropagation();
+                const isActive = hamburger.classList.contains('active');
+                toggleMenu(!isActive);
+            });
+
+            // Close menu when a nav link is clicked (mobile only)
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 900 && hamburger.classList.contains('active')) {
+                        toggleMenu(false);
+                    }
+                });
+            });
+
+            // Close menu when overlay is clicked
+            overlay.addEventListener('click', () => {
+                if (hamburger.classList.contains('active')) {
+                    toggleMenu(false);
+                }
+            });
+
+            // On window resize > 900px, ensure menu is closed (desktop mode)
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 900) {
+                    if (hamburger.classList.contains('active')) {
+                        toggleMenu(false);
+                    }
+                }
+            });
+
+            // Optional: close on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && hamburger.classList.contains('active')) {
+                    toggleMenu(false);
+                }
+            });
+        })();
+    </script>
+<script>
+const links = document.querySelectorAll('.nav-menu a');
+
+links.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const targetClass = link.getAttribute('data-scroll');
+    const targetSection = document.querySelector('.' + targetClass);
+    if(targetSection){
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+</script>
+    <!-- hero section -->
+    <section class="sec1">
+        <div class="container1">
+
+            <div class="video-text-box">
+                <!-- head -->
+                <h1 class="video-text">
+                    WEB DEVELOPER
+                    
+                </h1>
+                <!-- disc -->
+                <p>
+                    Hi, I'm Hussain Ashraf, a passionate Web Developer based in Karachi, Pakistan. I specialize in
+                    creating modern, responsive, and high-performance websites using the latest web technologies. I
+                    enjoy transforming ideas into interactive digital experiences and continuously learning to improve
+                    my development skills.
+
+                </p>
+                <!--icons -->
+                <div class="container2">
+                    <div class="p-box">
+                        <p>High knowledge on softwares</p>
+                    </div>
+                    <div class="icon-box html">
+                        <i class="fa-brands fa-html5"></i>
+                    </div>
+
+                    <div class="icon-box css">
+                        <i class="fa-brands fa-css3-alt"></i>
+                    </div>
+
+                    <div class="icon-box js">
+                        <i class="fa-brands fa-js"></i>
+                    </div>
+
+                    <div class="icon-box bootstrap">
+                        <i class="fa-brands fa-bootstrap"></i>
+                    </div>
+
+                    <div class="icon-box mysql">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+
+                    <div class="icon-box php">
+                        <i class="fa-brands fa-php"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-img">
+                <span class="wave wave1"></span>
+                <span class="wave wave2"></span>
+                <span class="wave wave3"></span>
+
+                <img src="WhatsApp_Image_2026-03-13_at_5.52.39_PM-removebg-preview.png">
+            </div>
+    </section>
+    <!-- second section -->
+   <section class="second-section">
+  <div class="container-second-section">
+    <div class="row">
+
+      <!-- Image column -->
+  <div class="col-12 col-md-6 text-center">
+  <div class="img-div">
+    <img src="WhatsApp_Image_2026-03-13_at_5.52.39_PM-removebg-preview.png" alt="profile">
+    <div class="exp-div">
+      <svg viewBox="0 0 200 200" class="exp-svg">
+        <defs>
+          <!-- Slightly bigger circle for more space -->
+          <path id="circlePath" d="M 100,100 m -80,0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" />
+        </defs>
+        <text font-size="16" fill="#000" >
+          <textPath href="#circlePath" startOffset="50%" text-anchor="middle">
+          LEARNING & GROWING EVERY DAY • LEARNING & GROWING EVERY DAY •
+          </textPath>
+        </text>
+      </svg>
+      <div class="exp-number">★</div> <!-- Emoji in center -->
+    </div>
+  </div>
+</div>
+
+      <!-- Text column -->
+      <div class="col-12 col-md-6 second-column">
+        <h5 class="about-small">ABOUT ME</h5>
+        <h2 class="main-heading">Web Developer</h2>
+        <p>I'm a passionate Web Developer, and I give my 100% in every project. For the last 1 years, I've been working professionally and learned everything needed to make your project perfect.</p>
+        <p>I mainly work with React, and here's why it’s awesome for my clients:</p>
+        <p>👍 Supported by Facebook – reliable and trusted.</p>
+        <p>👍 Lots of plugins and components – makes development faster and easier.</p>
+        <p>👍 Great performance – better than many other frameworks out there.</p>
+        <h1 class="second-colum-logo">Hussain Ashraf...</h1>
+        <a href="file.html"><button>Download</button></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+  <!-- third section -->
+   <section class="third-section">
+    <div class="container-third-sec">
+        <div class="row ">
+             <div class="col-12 col-md-6 third-first-col">
+            <h4>Services</h4>
+            <h2>I offer a Full-cycle of Web Development Services</h2>
+            <p>For more than 1 years our experts have been accomplishing enough with modern Web Development, new generation programming language, and Full Stack developers to deliver cost-effective solutions.<br>
+
+And also, I can provide you experts if you need for any technology.</p>
+  <!-- skills bar -->
+<div class="skills">
+
+  <div class="skill">
+    <div class="skill-top">
+      <span>HTML</span>
+      <span>95%</span>
+    </div>
+    <div class="skill-bar">
+      <div class="skill-fill html"></div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-top">
+      <span>CSS</span>
+      <span>90%</span>
+    </div>
+    <div class="skill-bar">
+      <div class="skill-fill css"></div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-top">
+      <span>JavaScript</span>
+      <span>85%</span>
+    </div>
+    <div class="skill-bar">
+      <div class="skill-fill js"></div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-top">
+      <span>Bootstrap</span>
+      <span>88%</span>
+    </div>
+    <div class="skill-bar">
+      <div class="skill-fill bootstrap"></div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-top">
+      <span>PHP</span>
+      <span>80%</span>
+    </div>
+    <div class="skill-bar">
+      <div class="skill-fill php"></div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-top">
+      <span>MySQL</span>
+      <span>85%</span>
+    </div>
+    <div class="skill-bar">
+      <div class="skill-fill mysql"></div>
+    </div>
+  </div>
+
+</div>
+             </div> 
+              <div class="col-12 col-md-6  third-second-col" >
+                  <!-- imagess -->
+<div class="third-second-col">
+
+  <div class="card-box">
+    <i class="fa-solid fa-circle-check"></i>
+    <h3>R & D</h3>
+  </div>
+
+  <div class="card-box">
+    <i class="fa-solid fa-pen-ruler"></i>
+    <h3>Design</h3>
+  </div>
+
+  <div class="card-box">
+    <i class="fa-solid fa-award"></i>
+    <h3>Quality</h3>
+  </div>
+
+  <div class="card-box">
+    <i class="fa-solid fa-code"></i>
+    <h3>Development</h3>
+  </div>
+
+  <div class="card-box">
+    <i class="fa-solid fa-screwdriver-wrench"></i>
+    <h3>Maintain</h3>
+  </div>
+  <div class="card-box">
+    <i class="fa-solid fa-lightbulb"></i>
+    <h3>Innovation</h3>
+  </div>
+
+</div>
+              </div> 
+        </div>
+    </div>
+   </section>
+
+
+
+         <section class="fourth-sec" style="margin:50px;">
+    <div class="section-container">
+      <h4 class="about-small">Portfolio</h4>
+      <h2 class="head2">Each project is a unique piece of development</h2>
+
+      <div class="projects-carousel">
+        <!-- PROJECT 1: GIFTTOPIA (7 images) -->
+        <div class="project-premium-card">
+          <div class="card-header">
+            <h3 class="project-title">GIFTTOPIA <span>Online shopping store</span></h3>
+            <p class="project-desc">Curated gift experience · Smart recommendations & seamless UI</p>
+          </div>
+          <div class="gallery-row">
+            <div class="gallery-img"><img src="images/eproject1.JPG" alt="gift product 1" loading="lazy"></div>
+            <div class="gallery-img"><img src="images/eproject2.JPG" alt="gift product 2" loading="lazy"></div>
+            <div class="gallery-img"><img src="images/eproject3.JPG" alt="gift product 3" loading="lazy"></div>
+            <div class="gallery-img"><img src="images/eproject4.JPG" alt="gift product 4" loading="lazy"></div>
+            <div class="gallery-img"><img src="images/eprojectcart.JPG" alt="gift product 5" loading="lazy"></div>
+            <div class="gallery-img"><img src="images/eprojectcheck.JPG" alt="gift product 6" loading="lazy"></div>
+            <div class="gallery-img"><img src="images/eprojectdb.JPG" alt="gift product 7" loading="lazy"></div>
+          </div>
+          <div class="tech-stack-mini">
+            <span class="tech-badge">HTML</span>
+            <span class="tech-badge">CSS</span>
+            <span class="tech-badge">JS</span>
+            <span class="tech-badge">MYSQL/PHP</span>
+          </div>
+        </div>
+        
+        <!-- PROJECT 2: GYM Website (5 images) -->
+        <div class="project-premium-card">
+          <div class="card-header">
+            <h3 class="project-title"><span class="gym-highlight">GYM</span> Website Project</h3>
+            <p class="project-desc">Fitness ecosystem · Class booking & member dashboards</p>
+          </div>
+          <div class="gallery-row">
+            <div class="gallery-img"><img src="images/gym1.JPG" alt="gym equipment 1" loading="lazy"></div>
+            <div class="gallery-img"><img src="images/gym2.JPG" alt="gym training 2" loading="lazy"></div>
+            <div class="gallery-img"><img src="images/gym3.JPG" alt="gym class 3" loading="lazy"></div>
+            <div class="gallery-img"><img src="images/gym4.JPG" alt="gym weight 4" loading="lazy"></div>
+            <div class="gallery-img"><img src="images/gym5.JPG" alt="gym lifestyle 5" loading="lazy"></div>
+          </div>
+          <div class="tech-stack-mini">
+            <span class="tech-badge">HTML</span>
+            <span class="tech-badge">CSS</span>
+            <span class="tech-badge">JS</span>
+            <span class="tech-badge">BOOTSTRAP</span>
+          </div>
+        </div>
+        
+        <!-- PROJECT 3: AURALUXE (1 image covering 90% width, centered blur text) -->
+        <div class="project-premium-card">
+          <div class="card-header">
+            <h3 class="project-title">AURALUXE <span class="third-badge">Premium Audio</span></h3>
+            <p class="project-desc">Experience Sound Like Never Before</p>
+            <div class="under-construction">
+              <span>🚧</span> launching soon
+            </div>
+          </div>
+          <div class="gallery-row single-center">
+            <div class="gallery-img">
+              <img src="images/aura1.JPG" alt="Auraluxe hero concept" loading="lazy">
+              <div class="coming-soon-text">launching soon</div>
+            </div>
+          </div>
+          <div class="tech-stack-mini">
+            <span class="tech-badge">HTML</span>
+            <span class="tech-badge">CSS</span>
+            <span class="tech-badge">JS</span>
+            <span class="tech-badge">JQUERY</span>
+            <span class="tech-badge">MYSQL/PHP</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="carousel-note">
+        <span>✨</span> swipe to explore projects <span>→</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="imageModal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage" alt="Enlarged view">
+    <div id="modalCaption"></div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.modal-close');
+    const allImages = document.querySelectorAll('.gallery-img img');
+
+    function openModal(imgSrc, altText) {
+      modal.style.display = 'flex';
+      modalImg.src = imgSrc;
+      modalImg.alt = altText || 'Enlarged image';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    allImages.forEach(img => {
+      img.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const src = img.getAttribute('src');
+        const alt = img.getAttribute('alt') || 'Portfolio image';
+        openModal(src, alt);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+    });
+  </script>
+  
+<!-- five section -->
+<section class="fiv-sec" style="margin: 0 50px;">
+  <h3 class="fiv-sec-h3" style=" color:#c5621c; font-weight: bold;">Contact</h3>
+  <h2 style="color: black; font-weight: bold;">
+    Feel free to contact me if any assistance is<br> needed in the future
+  </h2>
+
+  <div class="container-five">
+    <!-- Box 1 -->
+    <div class="fiv-box">
+      <div class="fiv-header">
+        <i class="fa-solid fa-location-dot"></i>
+        <p class="fiv-title">Location</p>
+      </div>
+      <p class="fiv-con-p2">Karachi, North Nazimabad, Pakistan</p>
+    </div>
+
+    <!-- Box 2 -->
+    <div class="fiv-box">
+      <div class="fiv-header">
+        <i class="fa-solid fa-envelope"></i>
+        <p class="fiv-title">Email</p>
+      </div>
+      <p class="fiv-con-p2">hussainAshraf312007@gmail.com</p>
+    </div>
+
+    <!-- Box 3 -->
+    <div class="fiv-box">
+      <div class="fiv-header">
+        <i class="fa-solid fa-phone"></i>
+        <p class="fiv-title">Phone</p>
+      </div>
+      <p class="fiv-con-p2">0344-3207520</p>
+    </div>
+
+    <!-- Box 4 -->
+    <div class="fiv-box">
+      <div class="fiv-header">
+        <i class="fa-solid fa-clock"></i>
+        <p class="fiv-title">Working Hours</p>
+      </div>
+      <p class="fiv-con-p2">Mon - Fri: 9:00 AM - 6:00 PM</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h4>About Me</h4>
+      <p>I am a web developer passionate about creating beautiful and functional websites.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li>Home</a></li>
+        <li>Projects</a></li>
+        <li>Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>Karachi, North Nazimabad, Pakistan</p>
+      <p>Email: hussainAshraf312007</p>
+      <p>Phone: 0344-3207520</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 HussainAshraf. All rights reserved.
+  </div>
+</footer>
+</body>
+
+</html>
