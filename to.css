@@ -1564,312 +1564,242 @@
     @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap');
 
     /* ----- MAIN SECTION (FIV-SEC) ----- */
-    .fiv-sec {
-      max-width: 1440px;
-      margin: 0 auto;
-      padding: 80px 40px 100px;
-      transition: all 0.3s ease;
-    }
+   /* ========== MAIN CONTAINER – 3 BOXES, 80% WIDTH ON DESKTOP ========== */
+.container-five {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 columns for desktop/laptop */
+  gap: 28px;
+  width: 80%;               /* exactly 80% width as requested */
+  margin: 0 auto;           /* center the container */
+  transition: all 0.2s ease;
+}
 
-    /* heading styles */
-    .fiv-sec-h3 {
-      color: #c5621c;
-      font-weight: 600;
-      font-size: clamp(1rem, 4vw, 1.25rem);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-      display: inline-block;
-      background: rgba(197, 98, 28, 0.1);
-      padding: 6px 18px;
-      border-radius: 40px;
-      backdrop-filter: blur(2px);
-    }
+/* card styling – premium & modern (unchanged, works perfectly) */
+.fiv-box {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(0px);
+  padding: 38px 28px;
+  border-radius: 36px;
+  gap: 20px;
+  transition: all 0.4s cubic-bezier(0.2, 0.95, 0.4, 1.05);
+  box-sizing: border-box;
+  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  will-change: transform;
+}
 
-    .fiv-sec h2 {
-      color: #111827;
-      font-weight: 700;
-      font-size: clamp(1.8rem, 5vw, 2.8rem);
-      line-height: 1.2;
-      margin-bottom: 48px;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.02);
-    }
+.fiv-box:hover {
+  transform: translateY(-8px);
+  background: #ffffff;
+  box-shadow: 0 30px 45px -15px rgba(197, 98, 28, 0.2), 0 0 0 1px rgba(197, 98, 28, 0.2);
+  border-color: rgba(197, 98, 28, 0.3);
+}
 
-    /* ---------- GRID SYSTEM (fully responsive, premium) ---------- */
-    .container-five {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 28px;
-      margin: 0 auto;
-      transition: all 0.2s ease;
-        width:80%;
-    }
+/* header (icon + title) */
+.fiv-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
 
-    /* card styling — premium & modern */
-    .fiv-box {
-      display: flex;
-      flex-direction: column;
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(0px);
-      padding: 38px 28px;
-      border-radius: 36px;
-      gap: 20px;
-      transition: all 0.4s cubic-bezier(0.2, 0.95, 0.4, 1.05);
-      box-sizing: border-box;
-      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      will-change: transform;
-    }
+/* icon design */
+.fiv-header i {
+  font-size: clamp(26px, 3vw, 42px);
+  color: #c5621c;
+  padding: 16px;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #ffffff, #fef9f4);
+  border: 1px solid #ffe1c6;
+  box-shadow: 0 10px 20px -5px rgba(197, 98, 28, 0.12), inset 0 1px 0 rgba(255,255,255,0.8);
+  transition: all 0.3s ease;
+  aspect-ratio: 1 / 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    /* elegant hover effect */
-    .fiv-box:hover {
-      transform: translateY(-8px);
-      background: #ffffff;
-      box-shadow: 0 30px 45px -15px rgba(197, 98, 28, 0.2), 0 0 0 1px rgba(197, 98, 28, 0.2);
-      border-color: rgba(197, 98, 28, 0.3);
-    }
+.fiv-box:hover .fiv-header i {
+  transform: scale(1.03);
+  background: #ffffff;
+  border-color: #c5621c;
+  box-shadow: 0 16px 24px -8px rgba(197, 98, 28, 0.25);
+  color: #b0520c;
+}
 
-    /* header (icon + title) */
-    .fiv-header {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
+/* title */
+.fiv-title {
+  font-weight: 700;
+  color: #0a1927;
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+  margin: 0;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  background: linear-gradient(120deg, #1e2a3a, #2c3e4e);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
 
-    /* icon design — premium touch */
-    .fiv-header i {
-      font-size: clamp(26px, 3vw, 42px);
-      color: #c5621c;
-      padding: 16px;
-      border-radius: 28px;
-      background: linear-gradient(145deg, #ffffff, #fef9f4);
-      border: 1px solid #ffe1c6;
-      box-shadow: 0 10px 20px -5px rgba(197, 98, 28, 0.12), inset 0 1px 0 rgba(255,255,255,0.8);
-      transition: all 0.3s ease;
-      width: auto;
-      aspect-ratio: 1 / 1;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
+/* description text */
+.fiv-con-p2 {
+  font-weight: 500;
+  color: #2c3f4f;
+  text-align: left;
+  margin: 0;
+  font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+  line-height: 1.55;
+  border-top: 2px solid #f0e7de;
+  padding-top: 16px;
+  letter-spacing: -0.2px;
+  word-break: break-word;
+}
 
-    .fiv-box:hover .fiv-header i {
-      transform: scale(1.03);
-      background: #ffffff;
-      border-color: #c5621c;
-      box-shadow: 0 16px 24px -8px rgba(197, 98, 28, 0.25);
-      color: #b0520c;
-    }
+/* ========== RESPONSIVE BREAKPOINTS ========== */
 
-    /* title inside header */
-    .fiv-title {
-      font-weight: 700;
-      color: #0a1927;
-      font-size: clamp(1.35rem, 3vw, 1.8rem);
-      margin: 0;
-      letter-spacing: -0.3px;
-      line-height: 1.3;
-      background: linear-gradient(120deg, #1e2a3a, #2c3e4e);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
+/* Large desktops (≥1600px) – keep 80% width but increase spacing */
+@media (min-width: 1600px) {
+  .container-five {
+    gap: 36px;
+  }
+  .fiv-box {
+    padding: 44px 36px;
+  }
+}
 
-    /* address / contact details */
-    .fiv-con-p2 {
-      font-weight: 500;
-      color: #2c3f4f;
-      text-align: left;
-      margin: 0;
-      font-size: clamp(0.9rem, 2.5vw, 1.05rem);
-      line-height: 1.55;
-      border-top: 2px solid #f0e7de;
-      padding-top: 16px;
-      letter-spacing: -0.2px;
-      word-break: break-word;
-    }
+/* Standard laptops / small desktops (≤1100px) – 80% width maintained */
+@media (max-width: 1100px) {
+  .container-five {
+    gap: 24px;
+  }
+  .fiv-box {
+    padding: 32px 24px;
+  }
+}
 
-    /* ========== FULL RESPONSIVE ========== */
-    /* large desktop refinement */
-    @media (min-width: 1600px) {
-      .fiv-sec {
-        padding: 100px 60px;
-      }
-      .container-five {
-        gap: 36px;
-      }
-      .fiv-box {
-        padding: 44px 36px;
-      }
-    }
+/* Tablet landscape (≤900px): switch to 2 columns, slightly wider container */
+@media (max-width: 900px) {
+  .container-five {
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;             /* a bit more width on tablets for readability */
+    gap: 28px;
+  }
+  .fiv-sec h2 {
+    text-align: center;
+  }
+}
 
-    /* laptops / medium screens (keep 4 cols until 1100px) */
-    @media (max-width: 1100px) {
-      .fiv-sec {
-        padding: 70px 35px;
-      }
-      .container-five {
-        gap: 24px;
-      }
-      .fiv-box {
-        padding: 32px 24px;
-      }
-    }
+/* Tablet portrait & small devices (≤700px): still 2 columns, tighter spacing */
+@media (max-width: 700px) {
+  .container-five {
+    gap: 22px;
+    width: 92%;
+  }
+  .fiv-box {
+    padding: 28px 22px;
+  }
+  .fiv-header {
+    gap: 14px;
+  }
+  .fiv-header i {
+    padding: 12px;
+    font-size: clamp(22px, 5vw, 32px);
+  }
+}
 
-    /* Tablet landscape: switch to 2 columns */
-    @media (max-width: 900px) {
-      .container-five {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 28px;
-      }
-      .fiv-sec {
-        padding: 60px 30px;
-      }
-      .fiv-sec h2 {
-        margin-bottom: 40px;
-        text-align: center;
-      }
-      .fiv-sec-h3 {
-        display: table;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
+/* Mobile (≤580px): single column, full width (no 80% restriction) */
+@media (max-width: 580px) {
+  .container-five {
+    grid-template-columns: 1fr;
+    width: 100%;            /* full width on mobile for better use of space */
+    gap: 24px;
+    padding: 0 16px;        /* side padding instead of fixed width */
+    box-sizing: border-box;
+  }
+  
+  /* center each card horizontally */
+  .fiv-box {
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 32px 24px;
+    border-radius: 32px;
+  }
+  
+  /* center content inside cards on mobile */
+  .fiv-header {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .fiv-con-p2 {
+    text-align: center;
+    border-top: 1px solid #f0e2d6;
+  }
+  
+  .fiv-title {
+    text-align: left;      /* keeps title readable, but overall card centered */
+  }
+}
 
-    /* Tablet portrait & small devices: still 2 cols but slightly reduced spacing */
-    @media (max-width: 700px) {
-      .container-five {
-        gap: 22px;
-      }
-      .fiv-box {
-        padding: 28px 22px;
-      }
-      .fiv-header {
-        gap: 14px;
-      }
-      .fiv-header i {
-        padding: 12px;
-        font-size: clamp(22px, 5vw, 32px);
-      }
-    }
+/* Extra small devices (≤400px) */
+@media (max-width: 400px) {
+  .container-five {
+    padding: 0 12px;
+  }
+  .fiv-box {
+    padding: 26px 18px;
+    border-radius: 28px;
+  }
+  .fiv-header i {
+    padding: 10px;
+    font-size: 24px;
+  }
+  .fiv-title {
+    font-size: 1.35rem;
+  }
+  .fiv-con-p2 {
+    font-size: 0.85rem;
+  }
+}
 
-    /* ===== MOBILE: SINGLE COLUMN + PERFECT CENTERING ===== */
-    @media (max-width: 580px) {
-      .fiv-sec {
-        padding: 50px 20px;
-      }
-      .container-five {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        justify-items: center;   /* centers each card horizontally */
-      }
-      
-      /* each card gets a max-width for premium look, not edge-to-edge */
-      .fiv-box {
-        max-width: 460px;
-        width: 100%;
-        padding: 32px 24px;
-        border-radius: 32px;
-        margin: 0 auto;          /* extra safety for centering */
-      }
-      
-      /* center all content inside card on mobile — fixes "center mein nai arhe" */
-      .fiv-header {
-        justify-content: center;
-        text-align: center;
-        gap: 14px;
-        flex-direction: row;     /* keep icon + title inline but centered */
-      }
-      
-      .fiv-con-p2 {
-        text-align: center;
-        padding-top: 16px;
-        border-top: 1px solid #f0e2d6;
-      }
-      
-      .fiv-title {
-        text-align: left;        /* keep title alignment natural, but within centered container it looks balanced */
-      }
-      
-      .fiv-sec h2 {
-        text-align: center;
-        margin-bottom: 32px;
-        padding: 0 8px;
-      }
-      
-      .fiv-sec-h3 {
-        display: table;
-        margin: 0 auto 16px auto;
-      }
-    }
+/* Touch devices: remove hover effect, use active state */
+@media (hover: none) and (pointer: coarse) {
+  .fiv-box {
+    transition: transform 0.15s ease;
+  }
+  .fiv-box:active {
+    transform: scale(0.98);
+    background: #fffaf5;
+  }
+}
 
-    /* extra small devices (≤400px) */
-    @media (max-width: 400px) {
-      .fiv-sec {
-        padding: 40px 16px;
-      }
-      .fiv-box {
-        padding: 26px 18px;
-        border-radius: 28px;
-      }
-      .fiv-header i {
-        padding: 10px;
-        font-size: 24px;
-      }
-      .fiv-title {
-        font-size: 1.35rem;
-      }
-      .fiv-con-p2 {
-        font-size: 0.85rem;
-        line-height: 1.45;
-      }
-      .fiv-sec h2 {
-        font-size: 1.65rem;
-      }
-    }
+/* Subtle entrance animation */
+.fiv-box {
+  animation: fadeSlideUp 0.5s ease backwards;
+  animation-delay: calc(var(--order, 0) * 0.07s);
+}
+.container-five .fiv-box:nth-child(1) { --order: 1; }
+.container-five .fiv-box:nth-child(2) { --order: 2; }
+.container-five .fiv-box:nth-child(3) { --order: 3; }
 
-    /* touch-friendly hover removal for mobile */
-    @media (hover: none) and (pointer: coarse) {
-      .fiv-box {
-        transition: transform 0.15s ease;
-      }
-      .fiv-box:active {
-        transform: scale(0.98);
-        background: #fffaf5;
-      }
-    }
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    /* subtle animation on page load (premium feel) */
-    .fiv-box {
-      animation: fadeSlideUp 0.5s ease backwards;
-      animation-delay: calc(var(--order, 0) * 0.07s);
-    }
-    .container-five .fiv-box:nth-child(1) { --order: 1; }
-    .container-five .fiv-box:nth-child(2) { --order: 2; }
-    .container-five .fiv-box:nth-child(3) { --order: 3; }
-    .container-five .fiv-box:nth-child(4) { --order: 4; }
-
-    @keyframes fadeSlideUp {
-      0% {
-        opacity: 0;
-        transform: translateY(24px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* additional polish: gradient border on hover */
-    .fiv-box:hover {
-      background: linear-gradient(145deg, #ffffff, #fffbf7);
-    }
+/* Optional hover polish */
+.fiv-box:hover {
+  background: linear-gradient(145deg, #ffffff, #fffbf7);
+}
 
 
 /* Footer Styles */
